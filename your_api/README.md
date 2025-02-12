@@ -149,6 +149,7 @@ The following processes may be retried until we get a definitive result from thi
 - Rate limiting could be added to protect the API
 - Health check endpoint could be added
 - API documentation could be added (e.g., OpenAPI/Swagger)
+- The requirement "return the success / failure of the transaction as quickly as possible" may not be met here, there's room for improvement as delays are quite high. We could think of alternative solutions to reduce the global latency from the client PoV.
 
 ## Project Structure
 
