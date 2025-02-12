@@ -1,0 +1,42 @@
+{
+  "name": "your-api",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "dev": "nodemon",
+    "lint": "eslint . --ext .ts",
+    "lint:fix": "eslint . --ext .ts --fix",
+    "format": "prettier --write \"src/**/*.ts\"",
+    "format:check": "prettier --check \"src/**/*.ts\""
+  },
+  "dependencies": {
+    "axios": "^1.4.0",
+    "bullmq": "^4.0.0",
+    "express": "^4.18.2",
+    "ioredis": "^5.3.2",
+    "reflect-metadata": "^0.1.13",
+    "tsyringe": "^4.8.0",
+    "winston": "^3.9.0",
+    "zod": "^3.21.4"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.17",
+    "@types/ioredis": "^5.0.0",
+    "@types/node": "^20.3.1",
+    "@typescript-eslint/eslint-plugin": "^5.59.9",
+    "@typescript-eslint/parser": "^5.59.9",
+    "eslint": "^8.42.0",
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-config-standard-with-typescript": "^35.0.0",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-n": "^15.7.0",
+    "eslint-plugin-promise": "^6.1.1",
+    "eslint-plugin-prettier": "^4.2.1",
+    "nodemon": "^2.0.22",
+    "prettier": "^2.8.8",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.1.3"
+  }
+} 

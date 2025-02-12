@@ -18,7 +18,9 @@ const sendWebhook = (id) => {
   const { status, webhookUrl } = transactions[id];
   axios
     .post(webhookUrl, { id, status })
-    .catch(() => console.log(`Could not post webhook for ${id}`));
+    .catch((error) =>
+      console.log(`Could not post webhook for ${id}`, webhookUrl, error)
+    );
 };
 
 app.post("/transaction", (req, res) => {
