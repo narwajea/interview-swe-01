@@ -77,7 +77,7 @@ Will process a webhook request taking the following body as input:
 
 ## Error Handling
 
-- Valid inputs returns 200
+- Valid inputs return 200
 - Invalid inputs return 400 with validation details
 - Internal errors return 500 with error logging
 
