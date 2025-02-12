@@ -1,0 +1,17 @@
+{
+  "name": "parent",
+  "version": "1.0.0",
+  "description": "Parent",
+  "main": "index.js",
+  "scripts": {
+    "dev": "concurrently -n client,server,thirdparty \"npm run dev:client\" \"npm run dev:server\" \"npm run dev:thirdparty\"",
+    "dev:client": "cd ./client && npm run start",
+    "dev:server": "cd ./your_api && npm run dev",
+    "dev:thirdparty": "cd ./thirdpartymock && npm run start"
+  },
+  "author": "Djamo",
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  }
+}

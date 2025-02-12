@@ -5,9 +5,31 @@ services:
     ports:
       - "3000:3000"
 
+  redis:
+    image: redis:alpine
+    ports:
+      - "6379:6379"
+
+  your-api:
+    build: ./your_api
+    environment:
+      CLIENT_URL: "http://client:3100"
+      PORT: 3200
+      REDIS_HOST: "redis"
+      REDIS_PORT: "6379"
+      THIRDPARTY_URL: "http://thirdparty:3000"
+      YOUR_API_URL: "http://your-api:3200"
+    ports:
+      - "3200:3200"
+    depends_on:
+      - redis
+      - thirdparty
+
   client:
     build: ./client
     environment:
-      YOUR_API: "http://thirdparty:3000" # replace with your new API
+      YOUR_API: "http://your-api:3200"
     ports:
       - "3100:3100"
+    depends_on:
+      - your-api
